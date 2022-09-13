@@ -1,7 +1,8 @@
 class ClientsController < ApplicationController
+  skip_before_action :authenticate_manager!, only: :home
   before_action :set_client, only: %i[ show edit update destroy ]
 
-  def home    
+  def home
   end
 
   def index
